@@ -6,14 +6,14 @@ import java.text.DecimalFormat;
 /**
  * Created by NilsK on 06.11.2015.
  */
-public class UserStory implements Comparable<UserStory>, Serializable {
+public class UserStoryDTO implements Comparable<UserStoryDTO>, Serializable {
     private final int value, effort, risk, penalty;
     private final double priority;
     private final String title;
 
     // Constructors
 
-    public UserStory(String t, int v, int e, int r, int pe, double pr) {
+    public UserStoryDTO(String t, int v, int e, int r, int pe, double pr) {
         this.title = t;
         this.value = v;
         this.effort = e;
@@ -24,7 +24,7 @@ public class UserStory implements Comparable<UserStory>, Serializable {
 
     // Methods
 
-    public int compareTo(UserStory us) {
+    public int compareTo(UserStoryDTO us) {
         if (this.priority > us.priority) return -1;
         if (this.priority < us.priority) return 1;
         return 0;

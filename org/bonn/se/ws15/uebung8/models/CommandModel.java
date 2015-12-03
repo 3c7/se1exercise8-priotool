@@ -1,7 +1,6 @@
 package org.bonn.se.ws15.uebung8.models;
 
 import org.bonn.se.ws15.uebung8.commands.Command;
-import org.bonn.se.ws15.uebung8.exceptions.CommandAlreadyRegisteredException;
 
 import java.util.HashMap;
 
@@ -14,10 +13,7 @@ public class CommandModel {
 
     private CommandModel(){}
 
-    public void addCommand(Command c) throws CommandAlreadyRegisteredException {
-        if (commands.containsKey(c.getName()))
-            throw new CommandAlreadyRegisteredException(c.getName());
-
+    public void addCommand(Command c) {
         commands.put(c.getName(), c);
     }
 
@@ -30,8 +26,15 @@ public class CommandModel {
         return commands.containsKey(key);
     }
 
+    public Command getCommand(String key) {
+        if (commands.containsKey(key))
+            return commands.get(key);
+        else return null;
+    }
+
     public synchronized static CommandModel getInstance() {
         if (instance != null) return instance;
         return instance = new CommandModel();
     }
+
 }

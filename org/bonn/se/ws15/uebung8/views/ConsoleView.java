@@ -1,5 +1,7 @@
 package org.bonn.se.ws15.uebung8.views;
 
+import org.bonn.se.ws15.uebung8.dtos.UserInputDTO;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -18,12 +20,12 @@ public class ConsoleView implements View {
         System.out.print(s);
     }
 
-    public String readLine() throws IOException {
+    public UserInputDTO readLine() throws IOException {
         // Cursor
         this.out("> ");
 
         // Read
-        return bReader.readLine();
+        return new UserInputDTO(bReader.readLine());
     }
 
 

@@ -5,10 +5,10 @@ import org.bonn.se.ws15.uebung8.views.ConsoleView;
 /**
  * Created by Nils on 03.12.2015.
  */
-public class HelpCommand extends Command {
+public class HelpCommand implements Command {
     private ConsoleView conView = new ConsoleView();
 
-    public void execute() {
+    public void execute(String[] args) {
         conView.outLine("Hilfe:\n>_ Befehl [parameter]\n" +
                 "Mögliche Befehle:\n" +
                 "enter titel,V,A,R,S\t-\tEine neue Userstory eingeben; V->Value, R->Risiko, S->Strafe als Ganzzahlen [1-5]; A->Aufwand als Fibonacci Zahl\n" +

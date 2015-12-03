@@ -1,5 +1,7 @@
 package org.bonn.se.ws15.uebung8.views;
 
+import org.bonn.se.ws15.uebung8.dtos.UserInputDTO;
+
 import java.io.IOException;
 
 /**
@@ -8,5 +10,5 @@ import java.io.IOException;
 public interface View {
     void out(String s);
     void outLine(String s);
-    String readLine() throws IOException;
+    UserInputDTO readLine() throws IOException;
 }
