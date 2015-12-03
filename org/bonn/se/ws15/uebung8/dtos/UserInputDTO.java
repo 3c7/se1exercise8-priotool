@@ -4,7 +4,7 @@ package org.bonn.se.ws15.uebung8.dtos;
  * Created by Nils on 03.12.2015.
  */
 public class UserInputDTO {
-    private String command;
+    private final String command;
     private String[] parameters;
 
     public UserInputDTO(String s) {

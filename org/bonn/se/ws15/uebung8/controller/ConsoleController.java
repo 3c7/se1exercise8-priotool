@@ -14,14 +14,14 @@ import java.io.IOException;
  * Created by Nils on 03.12.2015.
  */
 public class ConsoleController {
-    private ConsoleView conView = new ConsoleView();
-    private CommandModel commandModel = CommandModel.getInstance();
+    private final ConsoleView conView = new ConsoleView();
+    private final CommandModel commandModel = CommandModel.getInstance();
+    private final CommandController commandController = new CommandController();
 
 
     public void call() {
         UserInputDTO input;
         Command command;
-        CommandController commandController = new CommandController();
 
         conView.outLine("# MVC Priotool");
         while (true) {

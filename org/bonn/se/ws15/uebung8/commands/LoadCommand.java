@@ -3,7 +3,6 @@ package org.bonn.se.ws15.uebung8.commands;
 import org.bonn.se.ws15.uebung8.dtos.UserStoryDTO;
 import org.bonn.se.ws15.uebung8.exceptions.LoadIOException;
 import org.bonn.se.ws15.uebung8.exceptions.ParametersMissingException;
-import org.bonn.se.ws15.uebung8.exceptions.StoreIOException;
 import org.bonn.se.ws15.uebung8.models.UserStoryModel;
 import org.bonn.se.ws15.uebung8.views.ConsoleView;
 
@@ -32,7 +31,14 @@ public class LoadCommand implements Command {
             throw new LoadIOException();
         } catch (ClassNotFoundException cnfe) {
             throw new LoadIOException();
+        } finally {
+            try {
+                inputStream.close();
+            } catch (IOException ioe) {
+                conView.outLine("Fehler beim Schliessen des Input Streams.");
+            }
         }
+        conView.outLine("Laden erfolgreich. (" + args[0] + ")");
     }
 
     public String getName() {

@@ -8,6 +8,6 @@ import java.io.FileNotFoundException;
  * Created by Nils on 03.12.2015.
  */
 public interface Command {
-    void execute(String[] args) throws ContainerFullException, UserQuitException, ParametersMissingException, ValuesOutOfRangeException, NotAFibonacciNumberException, FileNotFoundException, StoreIOException, LoadIOException;
+    void execute(String[] args) throws ContainerFullException, UserQuitException, ParametersMissingException, ValuesOutOfRangeException, NotAFibonacciNumberException, StoreIOException, LoadIOException, FileNotFoundException;
     String getName();
 }

@@ -35,7 +35,7 @@ public class StoreCommand implements Command {
                 conView.outLine("Fehler beim Schließen des Output Streams.");
             }
         }
-        conView.outLine("Speicher erfolgreich. (" + args[0] + ".priotool)");
+        conView.outLine("Speichern erfolgreich. (" + args[0] + ".priotool)");
     }
 
     public String getName() {

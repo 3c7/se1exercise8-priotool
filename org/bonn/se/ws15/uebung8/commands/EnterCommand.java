@@ -15,8 +15,8 @@ import org.bonn.se.ws15.uebung8.views.ConsoleView;
  */
 public class EnterCommand implements Command {
     private final int MAX = Config.MAX;
-    private ConsoleView conView = new ConsoleView();
-    private UserStoryModel userStoryModel = UserStoryModel.getInstance();
+    private final ConsoleView conView = new ConsoleView();
+    private final UserStoryModel userStoryModel = UserStoryModel.getInstance();
 
     public void execute(String[] args) throws ContainerFullException, ParametersMissingException, ValuesOutOfRangeException, NotAFibonacciNumberException {
         if (userStoryModel.getCount() == MAX) throw new ContainerFullException();

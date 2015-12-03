@@ -9,7 +9,7 @@ import java.util.HashMap;
  */
 public class CommandModel {
     private static CommandModel instance = null;
-    private HashMap<String, Command> commands = new HashMap<String, Command>();
+    private final HashMap<String, Command> commands = new HashMap<String, Command>();
 
     private CommandModel(){}
 

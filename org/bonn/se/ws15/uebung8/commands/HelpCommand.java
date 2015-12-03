@@ -6,7 +6,7 @@ import org.bonn.se.ws15.uebung8.views.ConsoleView;
  * Created by Nils on 03.12.2015.
  */
 public class HelpCommand implements Command {
-    private ConsoleView conView = new ConsoleView();
+    private final ConsoleView conView = new ConsoleView();
 
     public void execute(String[] args) {
         conView.outLine("Hilfe:\n>_ Befehl [parameter]\n" +

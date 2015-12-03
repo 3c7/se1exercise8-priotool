@@ -7,7 +7,7 @@ import java.io.IOException;
 /**
  * Created by Nils on 03.12.2015.
  */
-public interface View {
+interface View {
     void out(String s);
     void outLine(String s);
     UserInputDTO readLine() throws IOException;

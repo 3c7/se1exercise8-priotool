@@ -4,7 +4,7 @@ package org.bonn.se.ws15.uebung8.util;
  * Created by Nils on 03.12.2015.
  */
 public class Util {
-    public static int fibonacci[] = {0, 1, 2, 3, 5, 8, 13, 20, 40, 100};
+    private final static int fibonacci[] = {0, 1, 2, 3, 5, 8, 13, 20, 40, 100};
 
     public static boolean isFibonnaci(int n) {
         for (int f : fibonacci) {

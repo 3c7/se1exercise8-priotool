@@ -10,7 +10,7 @@ import java.io.InputStreamReader;
  * Created by Nils on 03.12.2015.
  */
 public class ConsoleView implements View {
-    private BufferedReader bReader = new BufferedReader(new InputStreamReader(System.in));
+    private final BufferedReader bReader = new BufferedReader(new InputStreamReader(System.in));
 
     public void outLine(String s) {
         System.out.println(s);
