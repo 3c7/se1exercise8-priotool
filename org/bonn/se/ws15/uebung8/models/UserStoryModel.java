@@ -1,5 +1,6 @@
 package org.bonn.se.ws15.uebung8.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -9,8 +10,8 @@ import org.bonn.se.ws15.uebung8.dtos.UserStoryDTO;
 /**
  * Created by Nils on 03.12.2015.
  */
-public class UserStoryModel {
-    private final List<UserStoryDTO> stories = new ArrayList<UserStoryDTO>();
+public class UserStoryModel implements Serializable {
+    private List<UserStoryDTO> stories = new ArrayList<UserStoryDTO>();
 
     private static UserStoryModel instance;
 
@@ -33,6 +34,14 @@ public class UserStoryModel {
 
     public int getCount() {
         return this.stories.size();
+    }
+
+    public List<UserStoryDTO> exportUserStories() {
+        return stories;
+    }
+
+    public void importUserStories(List<UserStoryDTO> l) {
+        stories = l;
     }
 
     public static UserStoryModel getInstance() {

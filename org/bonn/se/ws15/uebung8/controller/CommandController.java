@@ -19,5 +19,7 @@ public class CommandController {
         this.commandModel.addCommand(new HelpCommand());
         this.commandModel.addCommand(new QuitCommand());
         this.commandModel.addCommand(new DumpCommand());
+        this.commandModel.addCommand(new StoreCommand());
+        this.commandModel.addCommand(new LoadCommand());
     }
 }

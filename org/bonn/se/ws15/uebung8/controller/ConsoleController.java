@@ -7,6 +7,7 @@ import org.bonn.se.ws15.uebung8.models.CommandModel;
 import org.bonn.se.ws15.uebung8.util.Config;
 import org.bonn.se.ws15.uebung8.views.ConsoleView;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
@@ -32,8 +33,10 @@ public class ConsoleController {
                 }
                 command.execute(input.getParameters());
 
+            } catch (FileNotFoundException fnfe) {
+                conView.outLine("Datei nicht gefunden.");
             } catch (IOException ioe) {
-                conView.outLine("Konnte nicht von Console lesen.");
+                conView.outLine("Ein-/Ausgabe Fehler.");
             } catch (ContainerFullException cfe) {
                 conView.outLine("Maximale Anzahl an UserStories wurde eingegeben.");
             } catch (NotAFibonacciNumberException nafne) {
@@ -42,6 +45,10 @@ public class ConsoleController {
                 conView.outLine("Eingegebene Parameter nicht im Wertebereich (1-5, Aufwand muss Fibonacci Zahl sein.)");
             } catch (ParametersMissingException pme) {
                 conView.outLine("Wichtige Parameter fehlen. Hilfe per: 'help'.");
+            } catch (StoreIOException sioe) {
+                conView.outLine("Fehler beim Speichern in Datei.");
+            } catch (LoadIOException lioe) {
+                conView.outLine("Fehler beim Laden aus Datei.");
             } catch (UserQuitException uqe) {
                 return;
             }
